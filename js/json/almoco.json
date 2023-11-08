@@ -1,0 +1,38 @@
+{
+    "almoco": [
+      {
+        "nome": "Salada Caesar",
+        "porcoes": 2,
+        "ingredientes": [
+          "2 peitos de frango grelhados",
+          "Alface romana",
+          "Croutons",
+          "Queijo parmesão ralado",
+          "Molho Caesar a gosto"
+        ],
+        "instrucoes": [
+          "Corte o frango grelhado em tiras.",
+          "Misture o frango, a alface, croutons e queijo em uma tigela grande.",
+          "Regue com molho Caesar e misture bem."
+        ]
+      },
+      {
+        "nome": "Massa Carbonara",
+        "porcoes": 2,
+        "ingredientes": [
+          "200g de espaguete",
+          "2 gemas de ovo",
+          "50g de queijo parmesão ralado",
+          "100g de bacon",
+          "Sal e pimenta a gosto"
+        ],
+        "instrucoes": [
+          "Cozinhe o espaguete de acordo com as instruções da embalagem e reserve um pouco da água do cozimento.",
+          "Frite o bacon até ficar crocante e reserve.",
+          "Em uma tigela, misture as gemas, o queijo parmesão e um pouco da água do cozimento do espaguete.",
+          "Misture o espaguete cozido com a mistura de gemas e queijo, adicione o bacon e tempere com sal e pimenta."
+        ]
+      }
+    ]
+  }
+  

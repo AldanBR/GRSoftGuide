@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Seleção de Procedimentos de Suporte</title>
+</head>
+<body>
+  <h1>Procedimentos de suporte</h1>
+
+  <form id="recipeForm">
+    <div class="cardProcess">
+      <div class="cardHeader">
+        <h2>Instalações</h2>
+      </div>
+      <div class="cardInstallBody">
+        <div class="OptionContent" id="installOptionContent">
+          <input class="checkbox" type="checkbox" name="" id="testI1">
+          <label id="testI1">Teste Instal 1</label>
+        </div>
+        <div class="OptionContent" id="installOptionContent">
+          <input class="checkbox" type="checkbox" name="" id="testI2">
+          <label id="testI2">Teste Instal 2</label>
+        </div>
+      </div>
+    </div>
+    <div class="cardProcess">
+      <div class="cardHeader">
+        <h2>Integrações</h2>
+      </div>
+      <div class="cardIntegrBody">
+        <div class="OptionContent" id="integrOptionContent">
+          <input class="checkbox" type="checkbox" name="" id="testgr1">
+          <label id="testgr1">Teste Integration 1</label>
+        </div>
+        <div class="OptionContent" id="integrOptionContent">
+          <input class="checkbox" type="checkbox" name="" id="testgr2">
+          <label id="testgr2">Teste Integration 2</label>
+        </div>
+      </div>
+    </div>
+    
+    
+  </form>
+  <button type="button" id="confirmButton">Exibir Passo a Passo</button>
+
+  <div id="selectedRecipes">
+    <h2>Receitas Selecionadas:</h2>
+
+    <div id="result"></div>
+  </div>
+
+  
+  <script type="text/javascript" src="./js/dinamic.js"></script>
+</body>
+</html>

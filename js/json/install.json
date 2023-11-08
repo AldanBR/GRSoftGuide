@@ -1,0 +1,83 @@
+{
+    "intalacoes": [
+      {
+        "procedimento": "Instação GRFood",
+        "priori": 1,
+        "passos": [
+        "Baixe o GRFood no https://www.grfood.com.br/",
+        "Baixe o Live Update mais recente, através do https://www.grfood.com.br/Arquivos/Update",
+        "Descompacte o Live Update na pasta raiz do GRFood e Execute-o",
+        "Após o passo 3, se atentar se essa instalação foi de um servidor o terminal e configurar o caminho",
+        "Ir até o firewall do windows liberar as portas que o GRFood utiliza (3306, 8082, 9005)",
+        "Abrir o GRFood do cliente e autenticar a licença dele (A chave será cedida pelo Administrativo)",
+        "A partir daqui a instalação propriamente dita já foi efetuada, mas para o GRFood estar pronto para uso, é preciso configurá-lo",
+        "Dentro do GRFood seguir o caminho: Cadastros > Impressoras. Paralelamente verificar com o comercial/cliente quantas impressoras ele vai utilizar, quais são elas e para quais setores cada uma está alocada",
+        "Clique em 'Novo' Selecione o Setor, em seguida marque a opção 'Ativar impressora', depois selecione a impressora alocada aquele setor e então o driver (EPSON é o drive default, caso o drive da impressora não apareça ou o comercial/cliente não saiba informar) e clique em 'Confirma Alteração'",
+        "(Passo Especial) - Caso o cliente deseje trabalhar com o KDS, também é aqui que ele é configurado. A única mudança é que a opção a ser marcada é 'Ativar Monitor'",
+        "A partir daqui o sistema está pronto para uso e teste, contudo existem alguns ajustes finos frequentes que tornam mais fácil/agradável a experiência do usuário",
+        "Seguindo o Caminho: Sistema> Configurações",
+        "Na aba PDV Touch Geral. Desative a opção 14 e Ative a opção 17",
+        "Na aba Mesas. Ative a opção 6",
+        "Na aba Comanda. Ative a opção 3 e a opção 12",
+        "Na aba Entrega. Colocar a opção 5 em 'Saída motoqueiro'",
+        "Na aba Impressão. Ativar a opção 8",
+        "Na aba Caixa. Coloca a opção 1 como 'Único'; Na opção 11 ativar a opção 'Imprimir fita do caixa'",
+        "Na aba Geral. Desmarcar opção 17"
+        ]
+      },
+      {
+        "procedimento": "Instalação gConnect",
+        "priori": 2,
+        "passos": [
+          "Baixar o Zip mais recente do gConnect através do https://grfood.com.br/Arquivos/Update/gconnect/2022.08.03/gConnect.zip",
+          "Descompactar o zip na pasta Raiz do disco C",
+          "Criar atalhos do executável na área de trabalho",
+          "Acessar o setup.ini dentro da pasta do gConnect e verificar se o id da máquina servidor está corretamente apontado",
+          "Acessar o caminho: Sistema> Integrações > Configurações"
+        ]
+      },
+      {
+        "procedimento": "Instalação FoodZapp",
+        "priori": 3,
+        "passos": [
+          "Baixar o Zip mais recente do FoodZapp através do https://grfood.com.br/Arquivos/Update/foodzapp/",
+          "Descompactar o zip na pasta Raiz do disco C",
+          "Criar atalhos do executável na área de trabalho",
+          "Acessar o setup.ini dentro da pasta do FoodZapp e verificar se o id da máquina servidor está corretamente apontado",
+          "Abrir o setup.ini do GRFood servidor e procurar o parâmetro 'DiretorioZapp'.",
+          "Verificar (Corrigir caso não esteja) se ele aponta para o caminho da pasta 'Msgs'. OBS: não esquecer da \\ (contrabarra) no fim do caminho"
+        ]
+      },
+      {
+        "procedimento": "Instalação Fiscal",
+        "priori": 4,
+        "passos": [
+          "Baixar o instalador do GRFiscal pelo link https://grsoft.com.br/Arquivos/GRFiscal/InstalaGRFiscal0.exe",
+          "Faça Backup do Banco",
+          "Crie uma pasta chamada 'GRFiscal' na raiz do disco C, então execute o .exe baixado no passo 1 e instale-o nesta pasta",
+          "Execute o Live Updater do GRFiscal",
+          "Após o passo 4, o GRFiscal já está instalado propriamente dito, contudo falta sua atualização",
+          "Baixe o pacote de atualização do GRFiscal",
+          "Renomeie a pasta 'Arquivos' para 'Arquivos old' assim como os executáveis 'GRFiscal' e 'GRFiscalServiços'",
+          "Extraia os novos executáveis e a nova pasta 'Arquivos' na pasta raiz do GRFiscal; o setup de dependências pode ser extraído na Área de Trabalho",
+          "Execute o Setup de dependências",
+          "Após o passo 8, o GRFiscal já estará em sua versão atualizada, restando a sua configuração que começa a partir do passo 9",
+          "(Passo especial) - Caso a instalação tenha ocorrido em uma máquina terminal, antes de prosseguir com o passo 9 para a configuração, é necessário apontar o id da máquina servidor, no arquivo 'setup.ini' do GRFiscal",
+          "Vá até o arquivo 'setup.ini' do GRFood servidor e verifique (se necessário, corrija) o caminho apontado nos parâmetros 'CAMINHOGRFISCAL', 'CAMINHOCUPOMFISCAL' E 'CAMINHOCUPOMFISCALCONCLUIDO' para o caminho correto da pasta raiz do GRFiscal",
+          "(Passo especial) - Verificar se a licença do GRFood do cliente já possui o GRFiscal liberado. Caso não, entrar em contato com o administrativo e realizar uma nova autenticação para ele",
+          "Consulte o CNPJ do cliente no site da fazenda, através do link: https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp",
+          "Siga o caminho no GRFood: Sistema > Configurações > Dados e preencha conforme os dados adquiridos no passo 10. OBS: Fora inscrição estadual, as outras informações (CNPJ, CEP, ETC) devem ser preenchidas sem . ou -",
+          "(Passo especial) - Para realizar na íntegra o passo 11, será necessário pesquisar no Google, a inscrição estadual, do estado do cliente",
+          "Siga para a aba 'NFC-e' e verifique (se necessário, corrija) os itens: 1, 5, 6, 7, 8. O item 2 precisa ser verificado quanto à legislação estadual, o item 3 deve ser colocado em 0 e o item 11 deve SEMPRE ser mantido selecionado",
+          "Vá até a página raiz do GRFood na máquina servidor e execute como administrador o aplicativo 'ImportaIBPT', selecione o estado do cliente e clique em importar",
+          "Abra o GRFiscal recém instalado e preencha o CNPJ e a UF no caminho: NFC-e > Dados do Emitente",
+          "Selecione o Certificado digital da máquina. OBS: Caso não apareça opção alguma, significa que não há certificado instalado na máquina. Neste caso, o cliente deve ser alertado e comunicar sua contabilidade OU passar o arquivo e a senha para que seja efetuado a instalação do certificado na máquina",
+          "(Passo especial) - Se precisar instalar o certificado",
+          "Vá para a aba 'Certificado' e garanta que o campo 'Tipo de Ambiente' esteja de acordo com o item 2 do passo 12. OBS: o campo 'Token NFCe (CSC)' e o 'ID Token NFCe' devem ser passados para o suporte pela contabilidade do cliente",
+          "Vá até a aba configurações e selecione a impressora, depois habilite a impressão (Se o cliente tiver a intenção de usar a impressora, do contrário apenas deixe a impressão desabilitada)",
+          "Verificar no GRFood servidor se os produtos estão com os dados fiscais preenchidos. Caso não esteja, fazer a importação da planilha com os dados fiscais (Caminho: C:/GRFood/Relatorios) OBS: Se por ventura nem mesmo a tabela tiver preenchida, alertar o cliente que esse preenchimento é necessário, do contrário a nota fiscal será emitida com erros e pedir para que a contabilidade dele o preencha"
+        ]
+      }
+    ]
+}
+  

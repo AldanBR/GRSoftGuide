@@ -1,0 +1,41 @@
+{
+    "integracoes": [
+      {
+        "procedimento": "Instação GRFood",
+        "priori": 1,
+        "passos": [
+        "Baixe o GRFood no https://www.grfood.com.br/",
+        "Baixe o Live Update mais recente, através do https://www.grfood.com.br/Arquivos/Update",
+        "Descompacte o Live Update na pasta raiz do GRFood e Execute-o",
+        "Após o passo 3, se atentar se essa instalação foi de um servidor o terminal e configurar o caminho",
+        "Ir até o firewall do windows liberar as portas que o GRFood utiliza (3306, 8082, 9005)",
+        "Abrir o GRFood do cliente e autenticar a licença dele (A chave será cedida pelo Administrativo)",
+        "A partir daqui a instalação propriamente dita já foi efetuada, mas para o GRFood estar pronto para uso, é preciso configurá-lo",
+        "Dentro do GRFood seguir o caminho: Cadastros > Impressoras. Paralelamente verificar com o comercial/cliente quantas impressoras ele vai utilizar, quais são elas e para quais setores cada uma está alocada",
+        "Clique em 'Novo' Selecione o Setor, em seguida marque a opção 'Ativar impressora', depois selecione a impressora alocada aquele setor e então o driver (EPSON é o drive default, caso o drive da impressora não apareça ou o comercial/cliente não saiba informar) e clique em 'Confirma Alteração'",
+        "(Passo Especial) - Caso o cliente deseje trabalhar com o KDS, também é aqui que ele é configurado. A única mudança é que a opção a ser marcada é 'Ativar Monitor'",
+        "A partir daqui o sistema está pronto para uso e teste, contudo existem alguns ajustes finos frequentes que tornam mais fácil/agradável a experiência do usuário",
+        "Seguindo o Caminho: Sistema> Configurações",
+        "Na aba PDV Touch Geral. Desative a opção 14 e Ative a opção 17",
+        "Na aba Mesas. Ative a opção 6",
+        "Na aba Comanda. Ative a opção 3 e a opção 12",
+        "Na aba Entrega. Colocar a opção 5 em 'Saída motoqueiro'",
+        "Na aba Impressão. Ativar a opção 8",
+        "Na aba Caixa. Coloca a opção 1 como 'Único'; Na opção 11 ativar a opção 'Imprimir fita do caixa'",
+        "Na aba Geral. Desmarcar opção 17"
+        ]
+      },
+      {
+        "procedimento": "Instalação gConnect",
+        "priori": 2,
+        "passos": [
+          "Baixar o Zip mais recente do gConnect através do https://grfood.com.br/Arquivos/Update/gconnect/2022.08.03/gConnect.zip",
+          "Descompactar o zip na pasta Raiz do disco C",
+          "Criar atalhos do executável na área de trabalho",
+          "Acessar o setup.ini dentro da pasta do gConnect e verificar se o id da máquina servidor está corretamente apontado",
+          "Acessar o caminho: Sistema> Integrações > Configurações"
+        ]
+      }
+    ]
+}
+  
