@@ -12,7 +12,6 @@ function newProcedureOption(idOP,nameOP){
     var newInput = document.createElement("input");
     newInput.type = "checkbox";
     newInput.id = idOP;
-    newInput.classList.add("checkbox");
 
     var newLabel = document.createElement("label");
     newLabel.htmlFor = idOP
