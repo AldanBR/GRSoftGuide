@@ -1,9 +1,6 @@
-
 const fieldInstallOption = document.querySelector(".cardInstallBody");
 const fieldIntegrOption = document.querySelector(".cardIntegrBody");
-
-//const installProcedures = require("./json/install.json")
-//const integrProcedures = require("./json/integr.json")
+//Enviroments Variables
 
 function newProcedureOption(idOP,nameOP){
     var newOption = document.createElement("div");
@@ -27,16 +24,17 @@ function newProcedureOption(idOP,nameOP){
 function apontarECriar(caminhoJson, campoAlvo){
     fetch(caminhoJson)
     .then(response => response.json())
-    .then(data => {
-        const proceduresList = data.intalacoes ? data.intalacoes.map(x => x.procedimento) : data.integracoes.map(x => x.procedimento);
+    .then(data => {    
+        const proceduresList = data.procedimentos.map(x => x.nome);
+        const proceduresListID = data.procedimentos.map(x => x.idOP);
 
         for (let i = 0; i < proceduresList.length; i++) {
-          let newOption = newProcedureOption(`${campoAlvo}${i}`, proceduresList[i]);
+          let newOption = newProcedureOption(proceduresListID[i], proceduresList[i]);
           campoAlvo.appendChild(newOption);
         }
       })
       .catch(error => {
-        console.error(`Erro ao carregar o JSON de ${jsonPath}: `, error);
+        console.error(`Erro ao carregar o JSON de ${caminhoJson}: `, error);
       });
 
 
@@ -44,19 +42,3 @@ function apontarECriar(caminhoJson, campoAlvo){
 
 apontarECriar("js/json/install.json", fieldInstallOption)
 apontarECriar("js/json/integr.json", fieldIntegrOption)
-/*
-let installProceduresList = installProcedures.intalacoes.map((x) => x.procedimento);
-let integrProceduresList = integrProcedures.integracoes.map((x) => x.procedimento);
-
-// For para adicionar procedimentos de instalação
-for(let i = 0; i < installProceduresList.length; i++){
-    
-    let newOption = newProcedureOption(`Install${i}`,installProceduresList[i])
-
-    fieldInstallOption.appendChild(newOption);
-}
-
-for(let i = 0; i < integrProceduresList.length; i++){
-    let newOption = newProcedureOption(`Integr${i}`,integrProceduresList[i])
-    fieldIntegrOption.appendChild(newOption);
-}*/
