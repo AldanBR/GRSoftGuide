@@ -1,8 +1,9 @@
 {
-    "intalacoes": [
+    "procedimentos": [
       {
-        "procedimento": "Instação GRFood",
+        "nome": "Instação GRFood",
         "priori": 1,
+        "idOP": "InstFood",
         "passos": [
         "Baixe o GRFood no https://www.grfood.com.br/",
         "Baixe o Live Update mais recente, através do https://www.grfood.com.br/Arquivos/Update",
@@ -26,8 +27,9 @@
         ]
       },
       {
-        "procedimento": "Instalação gConnect",
+        "nome": "Instalação gConnect",
         "priori": 2,
+        "idOP": "InstgC",
         "passos": [
           "Baixar o Zip mais recente do gConnect através do https://grfood.com.br/Arquivos/Update/gconnect/2022.08.03/gConnect.zip",
           "Descompactar o zip na pasta Raiz do disco C",
@@ -37,8 +39,9 @@
         ]
       },
       {
-        "procedimento": "Instalação FoodZapp",
+        "nome": "Instalação FoodZapp",
         "priori": 3,
+        "idOP": "InstZapp",
         "passos": [
           "Baixar o Zip mais recente do FoodZapp através do https://grfood.com.br/Arquivos/Update/foodzapp/",
           "Descompactar o zip na pasta Raiz do disco C",
@@ -49,8 +52,9 @@
         ]
       },
       {
-        "procedimento": "Instalação Fiscal",
+        "nome": "Instalação Fiscal",
         "priori": 4,
+        "idOP": "InstFisc",
         "passos": [
           "Baixar o instalador do GRFiscal pelo link https://grsoft.com.br/Arquivos/GRFiscal/InstalaGRFiscal0.exe",
           "Faça Backup do Banco",
