@@ -1,8 +1,9 @@
 {
-    "integracoes": [
+    "procedimentos": [
       {
-        "procedimento": "Instação GRFood",
+        "nome": "Instação GRFood",
         "priori": 1,
+        "idOP": "IntegrFood",
         "passos": [
         "Baixe o GRFood no https://www.grfood.com.br/",
         "Baixe o Live Update mais recente, através do https://www.grfood.com.br/Arquivos/Update",
@@ -26,8 +27,9 @@
         ]
       },
       {
-        "procedimento": "Instalação gConnect",
+        "nome": "Instalação gConnect",
         "priori": 2,
+        "idOP": "IntegrConnect",
         "passos": [
           "Baixar o Zip mais recente do gConnect através do https://grfood.com.br/Arquivos/Update/gconnect/2022.08.03/gConnect.zip",
           "Descompactar o zip na pasta Raiz do disco C",
