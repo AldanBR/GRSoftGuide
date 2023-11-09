@@ -1,48 +1,93 @@
-var cafeDaManhaSelect = document.getElementById("cafeDaManhaSelect");
-var almocoSelect = document.getElementById("almocoSelect");
-var jantarSelect = document.getElementById("jantarSelect");
-var confirmButton = document.getElementById("confirmButton");
-var selectedRecipes = document.getElementById("selectedRecipes");
+const fieldGuideWindow = document.querySelector(".listWindow");
+const printGuideButton = document.getElementById('confirmButton');
+//Apontar caminhos de jsons de procedimentos
+const  installJsonPath = ("js/json/install.json");
+const integrJsonPath = ("js/json/integr.json");
 
-var selectedCafeDaManhaRecipes = [];
-var selectedAlmocoRecipes = [];
-var selectedJantarRecipes = [];
+let checkedIds = [];
+let currentStep = 0;
 
-confirmButton.addEventListener("click", function () {
-  selectedCafeDaManhaRecipes = Array.from(cafeDaManhaSelect.selectedOptions, (option) => option.value);
-  selectedAlmocoRecipes = Array.from(almocoSelect.selectedOptions, (option) => option.value);
-  selectedJantarRecipes = Array.from(jantarSelect.selectedOptions, (option) => option.value);
+//Enviroments Variables
 
-  // Função para exibir as receitas selecionadas
-  function displaySelectedRecipes(recipes, container) {
-    container.innerHTML = "";
-    recipes.forEach(function (recipeIndex, index) {
-      var recipeData = null;
-      var recipeType = null;
-      var recipeTypeText = "";
+function getGuidesChosed(){
+  checkedIds = [];
+  currentStep = 0;
+  let checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-      if (container === cafeDaManhaRecipe) {
-        recipeData = cafeDaManhaRecipes[recipeIndex];
-        recipeType = "Café da Manhã";
-      } else if (container === almocoRecipe) {
-        recipeData = almocoRecipes[recipeIndex];
-        recipeType = "Almoço";
-      } else if (container === jantarRecipe) {
-        recipeData = jantarRecipes[recipeIndex];
-        recipeType = "Jantar";
-      }
+  checkboxes.forEach(checkbox => {
+    if (checkbox.checked) {
+      checkedIds.push(checkbox.id);
+    }
+  });
 
-      if (recipeData) {
-        var recipeDiv = document.createElement("div");
-        recipeDiv.textContent = recipeType + ": " + recipeData.nome;
-        container.appendChild(recipeDiv);
-      }
+  return checkedIds;
+
+}
+
+function printGuides(){
+  fieldGuideWindow.innerHTML = '';
+  fetch(installJsonPath)
+    .then(response => response.json())
+    .then(data => {
+
+      for(let i = 0; i < checkedIds.length; i++){
+        let currentProcedure = data.procedimentos.find(x => x.idOP === checkedIds[i]);
+        let procedureStepsNumber = currentProcedure.passos.length;
+
+        for(let j = 0; j < procedureStepsNumber; j++){
+          let newStep = document.createElement("tr");
+          let stepNumber = document.createElement("td");
+          stepNumber.appendChild(document.createTextNode(currentStep+1));
+
+          let stepGuide = document.createElement("td");
+
+          let stepGuideInstructions = currentProcedure.passos[j];        
+          stepGuide.appendChild(document.createTextNode(stepGuideInstructions));
+
+
+          newStep.appendChild(stepNumber);
+          newStep.appendChild(stepGuide);
+          currentStep++;
+          fieldGuideWindow.appendChild(newStep);
+
+        }  
+      }    
+    })
+    .catch(error => {
+      console.error(`Erro ao carregar o JSON de ${installJsonPath}: `, error);
     });
-  }
 
-  displaySelectedRecipes(selectedCafeDaManhaRecipes, cafeDaManhaRecipe);
-  displaySelectedRecipes(selectedAlmocoRecipes, almocoRecipe);
-  displaySelectedRecipes(selectedJantarRecipes, jantarRecipe);
+    fetch(integrJsonPath)
+    .then(response => response.json())
+    .then(data => {
 
-  selectedRecipes.style.display = "block";
-});
+      for(let i = 0; i < checkedIds.length; i++){
+        let currentProcedure = data.procedimentos.find(x => x.idOP === checkedIds[i]);
+        let procedureStepsNumber = currentProcedure.passos.length;
+
+        for(let j = 0; j < procedureStepsNumber; j++){
+          let newStep = document.createElement("tr");
+          let stepNumber = document.createElement("td");
+          stepNumber.appendChild(document.createTextNode(currentStep+1));
+
+          let stepGuide = document.createElement("td");
+
+          let stepGuideInstructions = currentProcedure.passos[j];        
+          stepGuide.appendChild(document.createTextNode(stepGuideInstructions));
+
+
+          newStep.appendChild(stepNumber);
+          newStep.appendChild(stepGuide);
+          fieldGuideWindow.appendChild(newStep);
+          currentStep++;
+
+        }  
+      }    
+    })
+    .catch(error => {
+      console.error(`Erro ao carregar o JSON de ${integrJsonPath}: `, error);
+    });
+  
+};
+
+printGuideButton.addEventListener('click', function(){getGuidesChosed(); printGuides();});
